@@ -1,3 +1,5 @@
+
+Copy code
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -159,7 +161,7 @@
 
     .image-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
     }
 
@@ -171,26 +173,10 @@
       transition: transform 0.3s ease;
     }
 
-    .grid-item:hover {
-      transform: translateY(-10px);
-    }
-
-    .grid-item.large {
-      grid-column: span 2;
-    }
-
-    .full-width {
+    .grid-item img {
       width: 100%;
       height: auto;
       display: block;
-    }
-
-    .grid-item h3 {
-      padding: 15px;
-      margin: 0;
-      font-size: 18px;
-      text-align: center;
-      background: #f0f0f8;
     }
 
     .resources {
@@ -199,55 +185,6 @@
 
     .resources h2 {
       text-align: center;
-    }
-
-    .resources-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-
-    .resource-card {
-      background: linear-gradient(135deg, #4b5faa, #7a8fd3);
-      color: #ffffff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 280px;
-    }
-
-    .resource-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    .resource-card h3 {
-      margin-bottom: 10px;
-    }
-
-    .resource-card p {
-      font-size: 16px;
-      flex-grow: 1;
-    }
-
-    .resource-card a {
-      align-self: flex-start;
-      background-color: #ffffff;
-      color: #4b5faa;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .resource-card a:hover {
-      background-color: #4b5faa;
-      color: #ffffff;
     }
 
     footer {
@@ -280,10 +217,6 @@
 
       .image-grid {
         grid-template-columns: 1fr;
-      }
-
-      .grid-item.large {
-        grid-column: span 1;
       }
     }
   </style>
@@ -325,45 +258,14 @@
         <h2>ABOUT PROJECT C.A.R.B.O.N.</h2>
         <p>Project C.A.R.B.O.N. uses data from environmental organizations to provide accessible resources on climate change, sustainability, and environmental protection.</p>
         <div class="image-grid">
-          <div class="grid-item large">
-            <img src="data1.png" alt="GHG Carbon Dioxide Emissions" class="full-width">
-            <h3>GHG Carbon Dioxide Emissions</h3>
+          <div class="grid-item">
+            <img src="data1.png" alt="GHG Carbon Dioxide Emissions">
           </div>
           <div class="grid-item">
-            <img src="data3.png" alt="Overall Emissions from 1990-2012" class="full-width">
-            <h3>Overall Emissions from 1990-2012</h3>
+            <img src="data3.png" alt="Overall Emissions from 1990-2012">
           </div>
           <div class="grid-item">
-            <img src="data2.png" alt="Facility Emissions" class="full-width">
-            <h3>Facility Emissions</h3>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="resources" class="resources">
-      <div class="container">
-        <h2>DATASETS USED</h2>
-        <div class="resources-grid">
-          <div class="resource-card">
-            <h3>Global CO2 Emissions & Removals</h3>
-            <p>Annual CO₂ net fluxes, fossil fuel emissions, and crop trade impacts from 2015-2020.</p>
-            <a href="https://earth.gov/ghgcenter/data-catalog/oco2-mip-co2budget-yeargrid-v1" target="_blank">Explore Data</a>
-          </div>
-          <div class="resource-card">
-            <h3>Global Carbon Fluxes</h3>
-            <p>Daily and monthly carbon flux data from NPP, respiration, and wildfire emissions.</p>
-            <a href="https://earth.gov/ghgcenter/data-catalog/micasa-carbonflux-grid-v1" target="_blank">Explore Data</a>
-          </div>
-          <div class="resource-card">
-            <h3>Global Methane Emissions</h3>
-            <p>Monthly methane emissions data from microbial, fossil, and pyrogenic sources.</p>
-            <a href="https://earth.gov/ghgcenter/data-catalog/tm54dvar-ch4flux-monthgrid-v1" target="_blank">Explore Data</a>
-          </div>
-          <div class="resource-card">
-            <h3>EPA 2022 Greenhouse Gas Report</h3>
-            <p>Summary of reported greenhouse gas emissions by gas type and industry.</p>
-            <a href="https://www.epa.gov/ghgreporting/data-sets" target="_blank">Explore Data</a>
+            <img src="data2.png" alt="Facility Emissions">
           </div>
         </div>
       </div>
