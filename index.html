@@ -145,11 +145,52 @@
       background-color: #ffffff;
     }
 
+    .about h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
     .about p {
       font-size: 18px;
       max-width: 800px;
-      margin: 0 auto 20px;
+      margin: 0 auto 40px;
       text-align: center;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    .grid-item {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .grid-item.large {
+      grid-column: span 2;
+    }
+
+    .full-width {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .grid-item h3 {
+      padding: 15px;
+      margin: 0;
+      font-size: 18px;
+      text-align: center;
+      background: #f0f0f8;
     }
 
     .resources {
@@ -236,6 +277,14 @@
       .hero-logos img {
         margin: 10px;
       }
+
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-item.large {
+        grid-column: span 1;
+      }
     }
   </style>
 </head>
@@ -273,15 +322,23 @@
 
     <section id="about" class="about">
       <div class="container">
-        <h2 style="text-align: center;">About Project C.A.R.B.O.N.</h2>
+        <h2>ABOUT PROJECT C.A.R.B.O.N.</h2>
         <p>Project C.A.R.B.O.N. uses data from environmental organizations to provide accessible resources on climate change, sustainability, and environmental protection.</p>
-        <img src="data1.png">
-        <img src="data2.png">
-        <img src = "data3.png" style = "display: block;
-        margin-left: auto;
-        margin-right: auto;
-        width: 50%;">
-    
+        <div class="image-grid">
+          <div class="grid-item large">
+            <img src="data1.png" alt="GHG Carbon Dioxide Emissions" class="full-width">
+            <h3>GHG Carbon Dioxide Emissions</h3>
+          </div>
+          <div class="grid-item">
+            <img src="data3.png" alt="Overall Emissions from 1990-2012" class="full-width">
+            <h3>Overall Emissions from 1990-2012</h3>
+          </div>
+          <div class="grid-item">
+            <img src="data2.png" alt="Facility Emissions" class="full-width">
+            <h3>Facility Emissions</h3>
+          </div>
+        </div>
+      </div>
     </section>
 
     <section id="resources" class="resources">
